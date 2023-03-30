@@ -6,6 +6,12 @@ tags: MySelf
 
 这是LSH的第一篇博客！
 
+```python
+print("hello world")
+```
+
+$\alpha = \beta + \theta$
+
 $$
 \mathcal{Y} = \alpha + \beta + \mathbf{W} \cdot \mathbf{X}
 $$
