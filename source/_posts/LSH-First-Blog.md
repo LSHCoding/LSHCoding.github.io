@@ -1,5 +1,5 @@
 ---
-title: LSH First Blog!
+title: LSH's First Blog!
 date: 2023-03-30 23:37:36
 tags: MySelf
 math: true
