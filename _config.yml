@@ -3,9 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: LSH
 subtitle: ''
-description: ''
+description: |
+  Ling Shuai writes about AI systems, machine learning, research engineering, and software practice.
+
+  This site collects technical articles, paper notes, project documents, research notes, and long-running series.
 keywords:
 author: Ling Shuai
 language: zh-CN
@@ -97,7 +100,43 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fluid
+theme: cactus
+
+theme_config:
+  projects_url: /projects/
+  nav:
+    home: /
+    articles: /archives/
+    projects: /projects/
+    about: /about/
+  social_links:
+    -
+      icon: github
+      label: GitHub
+      link: https://github.com/LSHCoding
+    -
+      icon: zhihu
+      label: Zhihu
+      link: https://www.zhihu.com/people/skylin-66
+  tags_overview: true
+  posts_overview:
+    show_all_posts: false
+    post_count: 5
+    sort_updated: false
+  archive:
+    sort_updated: false
+  post:
+    show_updated: true
+  copyright:
+    start_year: 2023
+  logo:
+    enabled: false
+  colorscheme: white
+  page_width: 48
+  mathjax:
+    enabled: true
+  cdn:
+    enable: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
