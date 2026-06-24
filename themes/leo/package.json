@@ -1,0 +1,16 @@
+{
+  "name": "hexo-theme-leo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Hexo theme for LSHBlog, derived from Cactus.",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "check": "npm --prefix ../.. run build",
+    "clean": "npm --prefix ../.. run clean",
+    "server": "npm --prefix ../.. run server"
+  }
+}
