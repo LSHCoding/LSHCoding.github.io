@@ -56,6 +56,23 @@ body
 
   @extend $base-style
 
+// Keep controls and navigation in the platform UI font. Content labels,
+// taxonomy links, captions, and footer credits inherit the reading stack.
+button,
+input,
+select,
+textarea,
+#header #nav,
+#header-post,
+#footer-post,
+#footer nav,
+.pagination,
+article header .author,
+article header .postdate,
+.post-list .meta,
+#archive .meta
+  font-family: $font-family-ui
+
 .content
   position: relative
   display: flex
@@ -167,6 +184,7 @@ code
   padding: 0 5px
   border: 1px dotted $color-border
   border-radius: 2px
+  font-family: $font-family-mono
   -webkit-border-radius: 2px
 
 .highlight

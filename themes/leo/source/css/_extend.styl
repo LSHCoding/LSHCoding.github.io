@@ -54,9 +54,14 @@ $base-style
   strong
     font-weight: bold
 
+  // Exclude every Font Awesome naming style, including legacy fas/far/fab.
   em
+  i:not([class^="fa"]):not([class*=" fa"])
   cite
+    font-family: $font-family-emphasis
     font-style: italic
+    // Use designed italic faces only; CJK falls back to the upright Kai alias.
+    font-synthesis-style: none
 
   sup
   sub
