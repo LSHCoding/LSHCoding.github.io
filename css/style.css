@@ -374,8 +374,11 @@ body strong {
   font-weight: bold;
 }
 body em,
+body i:not([class^="fa"]):not([class*=" fa"]),
 body cite {
+  font-family: "Leo Kaiti SC", "Leo Songti SC", ui-serif, "New York", "Iowan Old Style", Charter, Georgia, "Times New Roman", "Noto Serif", "Liberation Serif", "Kaiti SC", STKaiti, KaiTi, "KaiTi_GB2312", "Songti SC", STSong, serif;
   font-style: italic;
+  font-synthesis-style: none;
 }
 body sup,
 body sub {
@@ -435,6 +438,34 @@ body td {
   border-bottom: none;
 }
 @font-face {
+  font-family: "Leo Songti SC";
+  font-style: normal;
+  font-weight: 400;
+  src: local("STSongti-SC-Regular"), local("Songti SC Regular"), local("STSong"), local("Songti SC"), local("Noto Serif CJK SC"), local("Source Han Serif SC"), local("SimSun");
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F, U+30000-323AF;
+}
+@font-face {
+  font-family: "Leo Songti SC";
+  font-style: normal;
+  font-weight: 700;
+  src: local("STSongti-SC-Bold"), local("Songti SC Bold"), local("Noto Serif CJK SC Bold"), local("Source Han Serif SC Bold");
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F, U+30000-323AF;
+}
+@font-face {
+  font-family: "Leo Kaiti SC";
+  font-style: italic;
+  font-weight: 400;
+  src: local("STKaitiSC-Regular"), local("STKaiti-SC-Regular"), local("Kaiti SC Regular"), local("STKaiti"), local("KaiTi"), local("KaiTi_GB2312");
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F, U+30000-323AF;
+}
+@font-face {
+  font-family: "Leo Kaiti SC";
+  font-style: italic;
+  font-weight: 700;
+  src: local("STKaitiSC-Bold"), local("STKaiti-SC-Bold"), local("Kaiti SC Bold");
+  unicode-range: U+2E80-2FFF, U+3000-303F, U+3100-31EF, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F, U+30000-323AF;
+}
+@font-face {
   font-style: normal;
   font-family: "Meslo LG";
   src: local("Meslo LG S"), url("../lib/meslo-LG/MesloLGS-Regular.ttf") format("truetype");
@@ -482,11 +513,26 @@ body {
   color: #383838;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: "Leo Songti SC", ui-serif, "New York", "Iowan Old Style", Charter, Georgia, "Times New Roman", "Noto Serif", "Liberation Serif", "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea,
+#header #nav,
+#header-post,
+#footer-post,
+#footer nav,
+.pagination,
+article header .author,
+article header .postdate,
+.post-list .meta,
+#archive .meta {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
 }
 .content {
   position: relative;
@@ -1214,6 +1260,11 @@ article .content .caption {
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
+.article-gallery.justified-gallery > a > .jg-caption,
+.article-gallery.justified-gallery > div > .jg-caption,
+.article-gallery.justified-gallery > figure > .jg-caption {
+  font-family: "Leo Songti SC", ui-serif, "New York", "Iowan Old Style", Charter, Georgia, "Times New Roman", "Noto Serif", "Liberation Serif", "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif;
+}
 @media (min-width: 480px) {
   .article-tag,
   .article-category {
@@ -1410,7 +1461,7 @@ article .content .caption {
   font-display: swap;
   font-weight: 400;
   font-size: 11.200000000000001px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1589,6 +1640,7 @@ code {
   padding: 0 5px;
   border: 1px dotted #666;
   border-radius: 2px;
+  font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 2px;
 }
 .highlight {
