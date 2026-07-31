@@ -1,0 +1,45 @@
+<% var weeklyPosts = site.pages.filter(function(post) { return post.weekly }).sort('date', 'desc') %>
+<section class="weekly-page">
+  <header class="weekly-intro">
+    <div class="weekly-kicker">LSH WEEKLY</div>
+    <h1><%= page.title %></h1>
+    <div class="weekly-description"><%- page.content %></div>
+  </header>
+
+  <% if (weeklyPosts.length) { %>
+    <div class="weekly-grid">
+      <% weeklyPosts.each(function(post) { %>
+        <% var issueLabel = post.issue ? '第' + String(post.issue).padStart(2, '0') + '期' : '周刊' %>
+        <% var rawSummary = post.description || post.excerpt || post.content || '' %>
+        <% var summary = strip_html(rawSummary).replace(/\s+/g, ' ').trim() %>
+        <% if (summary.length > 110) { summary = summary.slice(0, 110).replace(/[，。；、,.!?！？\s]*$/, '') + '…' } %>
+        <a class="weekly-card-link" href="<%- url_for(post.path) %>">
+          <article class="weekly-card">
+            <div class="weekly-cover">
+              <% if (post.cover) { %>
+                <img src="<%- url_for(post.cover) %>" alt="<%= post.title %>" loading="lazy">
+              <% } else { %>
+                <span><%= issueLabel %></span>
+              <% } %>
+            </div>
+            <div class="weekly-card-body">
+              <div class="weekly-card-heading">
+                <h2><%= issueLabel %> · <%= post.title %></h2>
+                <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY/MM/DD') %></time>
+              </div>
+              <% if (summary) { %>
+                <p><%= summary %></p>
+              <% } %>
+            </div>
+          </article>
+        </a>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <div class="weekly-empty">
+      <div class="weekly-empty-mark" aria-hidden="true">W</div>
+      <h2>周刊即将开始</h2>
+      <p>后续发布的每一期都会收在这里。</p>
+    </div>
+  <% } %>
+</section>

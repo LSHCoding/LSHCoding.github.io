@@ -1,0 +1,7 @@
+<% if (page.layout !== 'weekly' && !page.weekly) { %>
+  <section class="site-hero" aria-label="站点简介">
+    <div class="site-hero-inner">
+      <p><%= theme.hero_text || config.subtitle || config.title %></p>
+    </div>
+  </section>
+<% } %>

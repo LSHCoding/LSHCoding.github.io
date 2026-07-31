@@ -1,0 +1,896 @@
+// A quiet, card-based reading layout inspired by https://tw93.fun/.
+// Only layout principles are reused; no reference-site assets or source code.
+$refresh-paper = #f5f4ed
+$refresh-card = #fff
+$refresh-hero = #15141a
+$refresh-ink = rgba(36, 41, 47, .9)
+$refresh-ink-soft = rgba(36, 41, 47, .72)
+$refresh-muted = #6b6f76
+$refresh-border = #e7e6df
+$refresh-code = #f6f7f8
+$refresh-accent = #176b5b
+
+html
+  height: auto
+  border-top: 0
+  scroll-behavior: smooth
+
+body
+  min-height: 100%
+  height: auto
+  background: $refresh-paper
+  color: $refresh-ink
+  font-size: $font-size
+  line-height: $line-height
+  letter-spacing: .015em
+  text-rendering: optimizeLegibility
+
+.site-shell
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+#header
+  position: relative
+  z-index: 10
+  margin: 0
+  width: 100%
+  height: 60px
+  background: $refresh-card
+  box-shadow: 0 6px 12px rgba(36, 41, 47, .08)
+
+  .site-header-inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 0 auto
+    padding: 0
+    max-width: 900px
+    height: 60px
+
+  .site-brand
+    display: flex
+    align-items: center
+    color: $refresh-ink
+
+  #title
+    display: block
+    margin: 0
+
+    h1
+      display: block
+      margin: 0
+      color: $refresh-ink
+      font-size: 1.7rem
+      font-weight: 700
+      line-height: 1
+      letter-spacing: .02em
+
+  #nav
+    color: $refresh-ink-soft
+    font-family: $font-family-ui
+    font-size: .9rem
+    font-weight: 500
+    letter-spacing: .02em
+
+    ul
+      display: flex
+      align-items: center
+      gap: 28px
+      margin: 0
+      padding: 0
+      list-style: none
+      line-height: 1
+
+      li
+        display: block
+        margin: 0
+        border: 0
+
+      a
+        margin: 0
+        color: $refresh-ink-soft
+        background: none
+        text-decoration: none
+
+        &:hover
+          color: $refresh-accent
+          background: none
+
+.site-hero
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 200px
+  background: $refresh-hero
+  color: #fff
+
+.site-hero-inner
+  padding: 28px 24px
+  width: 100%
+  max-width: 900px
+  text-align: center
+
+  p
+    margin: 0
+    color: rgba(255, 255, 255, .96)
+    font-family: $font-family-emphasis
+    font-size: clamp(1.75rem, 3vw, 2.25rem)
+    font-weight: 600
+    line-height: 1.35
+    letter-spacing: .045em
+    text-align: center
+
+.site-main
+  flex: 1
+  margin: 34px auto 0
+  padding: 0 20px
+  width: 100%
+  max-width: 940px
+
+.site-main-post
+  max-width: 940px
+
+.site-main-weekly
+  max-width: 1260px
+
+.site-main-weekly-post
+  max-width: 1120px
+
+.home-feed
+  display: flex
+  flex-direction: column
+  gap: 34px
+
+.home-card-link
+  display: block
+  color: $refresh-ink-soft
+  background: none
+  text-decoration: none
+
+  &:hover
+    color: $refresh-ink
+    background: none
+
+    .home-card
+      border-color: rgba(23, 107, 91, .3)
+
+    .home-card-title
+      color: $refresh-accent
+
+.home-card
+  margin: 0
+  padding: 30px 50px 26px
+  border: 1px solid transparent
+  border-radius: 8px
+  background: $refresh-card
+
+.home-card-title
+  margin: 0 0 10px
+  color: $refresh-ink-soft
+  font-size: 1.75rem
+  font-weight: 700
+  line-height: 1.38
+  letter-spacing: .025em
+
+.home-card-summary
+  color: $refresh-ink-soft
+  font-size: .96rem
+  line-height: 1.8
+  letter-spacing: .018em
+
+.home-card-date
+  font-family: $font-family-ui
+  font-size: .9em
+  font-weight: 650
+
+.home-archive-link
+  margin: 36px 0 12px
+  text-align: center
+
+  a
+    color: $refresh-muted
+    font-family: $font-family-ui
+    font-size: .9rem
+    font-weight: 500
+    text-decoration: none
+
+    &:hover
+      color: $refresh-accent
+
+.weekly-page
+  width: 100%
+
+.weekly-intro
+  margin: 4px 0 30px
+
+  .weekly-kicker
+    margin-bottom: 7px
+    color: $refresh-accent
+    font-family: $font-family-ui
+    font-size: .76rem
+    font-weight: 700
+    letter-spacing: .16em
+
+  h1
+    margin: 0
+    color: $refresh-ink
+    font-size: 2.15rem
+    font-weight: 700
+    line-height: 1.35
+
+.weekly-description
+  margin-top: 8px
+  color: $refresh-muted
+  font-size: .96rem
+
+  p
+    margin: 0
+
+.weekly-grid
+  display: grid
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+  gap: 20px
+
+.weekly-card-link
+  display: block
+  min-width: 0
+  color: $refresh-ink
+  background: none
+  text-decoration: none
+
+  &:hover
+    color: $refresh-ink
+    background: none
+
+    .weekly-card
+      transform: translateY(-2px)
+      box-shadow: 0 9px 22px rgba(36, 41, 47, .11)
+
+.weekly-card
+  overflow: hidden
+  height: 100%
+  border: 1px solid rgba(36, 41, 47, .05)
+  border-radius: 8px
+  background: $refresh-card
+  box-shadow: 0 3px 10px rgba(36, 41, 47, .07)
+  transition: transform .18s ease, box-shadow .18s ease
+
+.weekly-cover
+  display: flex
+  align-items: center
+  justify-content: center
+  aspect-ratio: 16 / 10
+  overflow: hidden
+  background: linear-gradient(145deg, #e5e4dc, #f3f2eb)
+  color: rgba(36, 41, 47, .34)
+  font-family: $font-family-ui
+  font-size: 1.25rem
+  font-weight: 700
+  letter-spacing: .12em
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.weekly-card-body
+  padding: 15px 16px 17px
+
+.weekly-card-heading
+  display: flex
+  align-items: baseline
+  justify-content: space-between
+  gap: 12px
+
+  h2
+    min-width: 0
+    margin: 0
+    color: $refresh-ink
+    font-size: 1rem
+    font-weight: 700
+    line-height: 1.45
+
+  time
+    flex: 0 0 auto
+    color: $refresh-muted
+    font-family: $font-family-ui
+    font-size: .73rem
+
+.weekly-card-body p
+  display: -webkit-box
+  overflow: hidden
+  margin: 9px 0 0
+  color: $refresh-ink-soft
+  font-size: .86rem
+  line-height: 1.65
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: 2
+
+.weekly-empty
+  padding: 70px 24px
+  border-radius: 8px
+  background: $refresh-card
+  text-align: center
+
+  .weekly-empty-mark
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 auto 18px
+    width: 58px
+    height: 58px
+    border-radius: 15px
+    background: $refresh-hero
+    color: #fff
+    font-family: $font-family-ui
+    font-size: 1.5rem
+    font-weight: 700
+
+  h2
+    margin: 0
+    color: $refresh-ink
+    font-size: 1.35rem
+
+  p
+    margin: 8px 0 0
+    color: $refresh-muted
+    font-size: .92rem
+
+.weekly-post-layout
+  display: grid
+  grid-template-columns: 210px minmax(0, 820px)
+  justify-content: center
+  gap: 30px
+  align-items: start
+
+.weekly-issue-nav
+  position: sticky
+  top: 90px
+  max-height: calc(100vh - 120px)
+  overflow-y: auto
+  color: $refresh-muted
+  font-family: $font-family-ui
+  font-size: .8rem
+
+  .weekly-back
+    display: inline-block
+    margin-bottom: 16px
+    color: $refresh-accent
+    background: none
+    font-weight: 650
+    text-decoration: none
+
+  ol
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    margin: 0 0 5px
+
+    a
+      display: block
+      padding: 8px 10px
+      border-radius: 6px
+      color: $refresh-muted
+      background: none
+      text-decoration: none
+
+      &:hover
+        color: $refresh-ink
+        background: rgba(255, 255, 255, .65)
+
+    span
+      display: block
+      font-weight: 700
+
+    small
+      display: block
+      overflow: hidden
+      margin-top: 2px
+      white-space: nowrap
+      text-overflow: ellipsis
+
+  li.is-current a
+    color: $refresh-ink
+    background: $refresh-card
+
+.weekly-post-card
+  min-width: 0
+  padding: 40px 50px 52px
+  border-radius: 8px
+  background: $refresh-card
+
+.weekly-post-header
+  margin-bottom: 28px
+
+  .weekly-kicker
+    margin-bottom: 7px
+    color: $refresh-accent
+    font-family: $font-family-ui
+    font-size: .76rem
+    font-weight: 700
+    letter-spacing: .12em
+
+  h1
+    margin: 0 0 8px
+    color: $refresh-ink
+    font-size: clamp(1.9rem, 3.5vw, 2.3rem)
+    font-weight: 700
+    line-height: 1.35
+
+  time
+    color: $refresh-muted
+    font-family: $font-family-ui
+    font-size: .82rem
+
+.weekly-post-cover
+  overflow: hidden
+  margin: 0 0 32px
+  border-radius: 8px
+
+  img
+    display: block
+    width: 100%
+    height: auto
+
+.post-layout
+  display: grid
+  grid-template-columns: minmax(0, 900px)
+  justify-content: center
+  gap: 30px
+  align-items: start
+
+.post-card,
+.page-card,
+.archive-card
+  min-width: 0
+  border-radius: 8px
+  background: $refresh-card
+
+.post-card
+  padding: 40px 50px 52px
+
+.page-card,
+.archive-card
+  padding: 38px 50px 46px
+
+.post-header
+  margin-bottom: 28px
+
+  .posttitle
+    margin: 0 0 10px
+    color: $refresh-ink
+    font-size: clamp(1.9rem, 3.5vw, 2.3rem)
+    font-weight: 700
+    line-height: 1.35
+    letter-spacing: .025em
+
+  .meta
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: 5px 12px
+    margin: 0
+    color: $refresh-muted
+    font-family: $font-family-ui
+    font-size: .84rem
+    line-height: 1.6
+
+    *
+      color: inherit
+      font-size: inherit
+
+    .author
+      font-weight: 650
+      letter-spacing: .04em
+
+    .article-tag:before,
+    .article-category:before
+      content: ""
+
+    a
+      color: $refresh-muted
+      background: none
+      text-decoration: underline
+      text-decoration-color: rgba(107, 111, 118, .35)
+      text-underline-offset: .2em
+
+.post-content
+  color: $refresh-ink
+  font-size: 1rem
+  line-height: 1.85
+  overflow-wrap: break-word
+
+  p
+    margin: 0 0 1.35em
+    text-align: start
+    hyphens: none
+
+  h2
+    margin: 2.2em 0 .85em
+    color: $refresh-ink
+    font-size: 1.6rem
+    font-weight: 700
+    line-height: 1.45
+
+  h3
+    margin: 1.8em 0 .7em
+    color: $refresh-ink
+    font-size: 1.25rem
+    font-weight: 700
+    line-height: 1.5
+    text-decoration: none
+
+  h4,
+  h5,
+  h6
+    display: block
+    margin: 1.5em 0 .6em
+    color: $refresh-ink
+    font-size: 1rem
+
+  a
+    color: $refresh-accent
+    background: none
+    text-decoration: underline
+    text-decoration-color: rgba(23, 107, 91, .35)
+    text-decoration-thickness: 1px
+    text-underline-offset: .2em
+
+    &:hover
+      color: darken($refresh-accent, 12%)
+      background: none
+
+  code
+    padding: .12em .38em
+    border: 0
+    border-radius: 4px
+    background: #eef1f2
+    color: #34424a
+    font-size: .9em
+
+  blockquote
+    margin: 1.5em 0
+    padding: .9em 1.1em
+    border-left: 4px solid $refresh-accent
+    border-radius: 0 6px 6px 0
+    background: #f3f7f5
+    color: $refresh-ink-soft
+    font-weight: 400
+    quotes: none
+
+    &:before
+      content: none
+
+    p
+      margin: 0
+
+  ul,
+  ol
+    margin: 0 0 1.35em
+    padding-left: 1.5em
+
+  li
+    margin-bottom: .45em
+
+  hr
+    margin: 2.5em 0
+    border: 0
+    border-top: 1px solid $refresh-border
+
+  table
+    display: block
+    overflow-x: auto
+    margin: 1.5em 0
+    width: 100%
+    border-collapse: collapse
+    font-size: .9rem
+
+  th,
+  td
+    padding: 10px 12px
+    border: 1px solid $refresh-border
+    text-align: left
+
+  th
+    background: #f3f4f3
+    color: $refresh-ink
+
+  img
+    display: block
+    margin: 1.8em auto
+    max-width: 100%
+    height: auto
+    border-radius: 6px
+
+  .highlight
+    position: relative
+    margin: 1.45em 0
+    padding: 14px 16px
+    border: 1px solid $refresh-border
+    border-radius: 8px
+    background: $refresh-code
+
+    table
+      display: table
+      margin: 0
+      width: auto
+      font-size: inherit
+
+    th,
+    td
+      padding: 0 8px
+      border: 0
+      background: transparent
+
+    td.gutter
+      padding-right: 12px
+      color: $refresh-muted
+      opacity: .42
+
+    code
+      padding: 0
+      background: transparent
+
+    .btn-copy
+      top: 10px
+      right: 12px
+      color: $refresh-muted
+      opacity: .45
+
+      &:hover
+        color: $refresh-accent
+        opacity: 1
+
+.page-header
+  margin-bottom: 24px
+
+.page-title
+  margin: 0
+  color: $refresh-ink
+  font-size: 2.1rem
+  font-weight: 700
+  line-height: 1.4
+
+.post-toc
+  display: none
+  color: $refresh-muted
+  font-family: $font-family-ui
+  font-size: .79rem
+  line-height: 1.65
+
+  .post-toc-title
+    margin-bottom: 10px
+    color: $refresh-ink
+    font-weight: 700
+
+  .toc,
+  .toc-child
+    margin: 0
+    padding: 0
+    list-style: none
+
+  .toc-child
+    margin-left: 12px
+
+  .toc-item
+    margin: 0 0 8px
+
+  a
+    display: block
+    color: $refresh-muted
+    background: none
+    text-decoration: none
+
+    &:hover
+      color: $refresh-accent
+      background: none
+
+#archive
+  .post-list
+    margin: 0
+    padding: 0
+
+  .post-year
+    margin-top: 28px
+
+    &:first-child
+      margin-top: 0
+
+    h2
+      margin: 0 0 14px
+      color: $refresh-ink
+      font-size: 1.45rem
+
+  .post-item
+    display: grid
+    grid-template-columns: 110px minmax(0, 1fr)
+    gap: 16px
+    margin: 0
+    padding: 11px 0
+    border-bottom: 1px solid $refresh-border
+
+    .meta
+      margin: 0
+      color: $refresh-muted
+      font-family: $font-family-ui
+      font-size: .86rem
+
+    a
+      color: $refresh-ink
+      background: none
+      text-decoration: none
+
+      &:hover
+        color: $refresh-accent
+        background: none
+
+#footer
+  display: block
+  position: static
+  margin: 42px 0 0
+  padding: 10px 20px 24px
+  width: 100%
+  color: $refresh-muted
+  font-family: $font-family-ui
+  font-size: .82rem
+  text-align: center
+
+  .site-footer-inner
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 7px
+
+  .footer-social
+    display: flex
+    gap: 15px
+
+    a
+      margin: 0
+      color: $refresh-muted
+      background: none
+      text-decoration: none
+
+      &:hover
+        color: $refresh-accent
+
+@media (min-width: 1408px)
+  .site-main-post
+    max-width: 1180px
+
+  .post-layout.has-toc
+    grid-template-columns: minmax(0, 900px) 210px
+
+  .post-toc
+    position: sticky
+    top: 90px
+    display: block
+    padding: 10px 0 24px
+
+@media (max-width: 1050px)
+  .weekly-grid
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+
+  .site-main-weekly-post
+    max-width: 940px
+
+  .weekly-post-layout
+    grid-template-columns: minmax(0, 820px)
+
+  .weekly-issue-nav
+    display: none
+
+@media (max-width: 760px)
+  #header
+    height: 58px
+
+    .site-header-inner
+      padding: 0 20px
+      height: 58px
+
+    #title h1
+      font-size: 1.45rem
+
+    #nav
+      font-size: .83rem
+
+      ul
+        gap: 18px
+
+  .site-hero
+    display: none
+
+  .site-main
+    margin-top: 15px
+    padding: 0
+
+  .site-main-weekly
+    padding: 0 15px
+
+  .site-main-weekly-post
+    padding: 0
+
+  .home-feed
+    gap: 15px
+
+  .home-card
+    padding: 20px 15px 18px
+    border-radius: 0
+
+  .home-card-title
+    font-size: 1.3rem
+
+  .home-card-summary
+    font-size: 1rem
+
+  .post-card,
+  .page-card,
+  .archive-card
+    padding: 28px 15px 36px
+    border-radius: 0
+
+  .post-header
+    margin-bottom: 24px
+
+    .posttitle
+      font-size: 1.75rem
+
+  .post-content
+    font-size: 1rem
+
+    h2
+      font-size: 1.4rem
+
+    .highlight
+      margin-right: -8px
+      margin-left: -8px
+
+  #archive .post-item
+    grid-template-columns: 1fr
+    gap: 4px
+
+  #footer
+    margin-top: 28px
+
+  .weekly-intro
+    margin: 3px 0 20px
+
+    h1
+      font-size: 1.8rem
+
+  .weekly-grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 14px
+
+  .weekly-card-heading
+    display: block
+
+    time
+      display: block
+      margin-top: 4px
+
+  .weekly-empty
+    padding: 55px 20px
+
+  .weekly-post-card
+    padding: 28px 15px 36px
+    border-radius: 0
+
+  .weekly-post-header
+    h1
+      font-size: 1.75rem
+
+@media (max-width: 480px)
+  #header
+    #nav
+      ul
+        gap: 14px
+
+  .home-card-title
+    font-size: 1.3rem
+
+  .weekly-grid
+    grid-template-columns: minmax(0, 1fr)

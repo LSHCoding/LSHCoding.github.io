@@ -1,6 +1,7 @@
 ---
 title: LSH's First Blog!
 date: 2023-03-30 23:37:36
+description: 记录从大气科学到机器学习的学习经历，以及对 Python 的偏爱。
 tags: MySelf
 math: true
 ---
@@ -8,11 +9,13 @@ math: true
 这是LSH的第一篇博客！
 
 我最喜欢的编程语言：Python
+
 ```python
 print("Hello Python!")
 ```
 
 我在大学阶段的主要学的内容：大气运动方程组
+
 $$
 \begin{cases}
 {\frac {d{\vec {V}}}{dt}}={\vec {g}}-{\frac {1}{\rho }}\nabla p-2{\vec {\Omega }}\land {\vec {V}}+{\vec {F_{\gamma }}}\\{\frac {\partial \rho }{\partial t}}+\nabla \cdot (\rho {\vec {V}})=0\\p=\rho RT\\C_{p}{\frac {dT}{dt}}-\alpha \omega ={\dot {Q}}

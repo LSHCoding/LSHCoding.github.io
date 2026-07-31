@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="<%= config.language || 'en' %>">
 <%- partial('_partial/head') %>
-<body class="max-width mx-auto px3 <%- theme.direction -%>">
-    <% if (is_post()) { %>
-      <%- partial('_partial/post/actions_desktop') %>
-    <% } %>
-    <div class="content index py4 <%= is_home() ? 'h-card' : '' %>">
-        <% if (!is_post()) { %>
-          <%- partial('_partial/header') %>
-        <% } %>
+<body class="<%- theme.direction -%>">
+    <div class="site-shell <%= is_home() ? 'h-card' : '' %>">
+      <%- partial('_partial/header') %>
+      <%- partial('_partial/hero') %>
+      <main id="main-content" class="site-main <%= page.layout === 'weekly' ? 'site-main-weekly' : (page.weekly ? 'site-main-weekly-post' : (is_post() ? 'site-main-post' : (is_home() ? 'site-main-home' : 'site-main-page'))) %>">
         <%- body %>
-        <% if (is_post()) { %>
-          <%- partial('_partial/post/actions_mobile') %>
-        <% } %>
-        <%- partial('_partial/footer') %>
+      </main>
+      <%- partial('_partial/footer') %>
     </div>
     <%- partial('_partial/styles') %>
     <%- partial('_partial/scripts') %>

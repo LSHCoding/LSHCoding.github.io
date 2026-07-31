@@ -1,18 +1,27 @@
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <%- partial('_partial/post/title', { post: page, index: false, class_name: 'posttitle' }) %>
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
-      </span>
-      <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
-      <%- partial('_partial/post/category') %>
-      <%- partial('_partial/post/tag') %>
+<% var postToc = toc(page.content, { min_depth: 2, max_depth: 3, list_number: false }) %>
+<div class="post-layout <%= postToc ? 'has-toc' : '' %>">
+  <article class="post post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <%- partial('_partial/post/title', { post: page, index: false, class_name: 'posttitle' }) %>
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
+        </span>
+        <%- partial('_partial/post/date', { post: page, class_name: 'postdate' }) %>
+        <%- partial('_partial/post/category') %>
+        <%- partial('_partial/post/tag') %>
+      </div>
+    </header>
+    <%- partial('_partial/post/gallery') %>
+    <div class="post-content e-content" itemprop="articleBody">
+      <%- page.content %>
     </div>
-  </header>
-  <%- partial('_partial/post/gallery') %>
-  <div class="content e-content" itemprop="articleBody">
-    <%- page.content %>
-  </div>
-</article>
+  </article>
+  <% if (postToc) { %>
+    <aside class="post-toc" aria-label="<%= __('post.mobile.toc') %>">
+      <div class="post-toc-title"><%= __('post.mobile.toc') %></div>
+      <%- postToc %>
+    </aside>
+  <% } %>
+</div>
 <%- partial('_partial/comments') %>

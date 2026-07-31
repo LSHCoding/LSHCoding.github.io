@@ -17,6 +17,7 @@ nav:
   home: /
   about: /about/
   articles: /archives/
+  weekly: /weekly/
   projects: /projects/
 
 
@@ -33,6 +34,9 @@ social_links:
   -
     icon: mail
     link: mailto:hello@example.com
+
+# Short line displayed in the dark introduction band.
+hero_text:
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud

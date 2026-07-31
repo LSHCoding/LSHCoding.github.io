@@ -103,10 +103,12 @@ ignore:
 theme: leo
 
 theme_config:
+  hero_text: AI systems, machine learning, research engineering, and software practice.
   projects_url: /projects/
   nav:
     home: /
     articles: /archives/
+    weekly: /weekly/
     projects: /projects/
     about: /about/
   social_links:

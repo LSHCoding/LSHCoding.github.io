@@ -1,6 +1,11 @@
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post page-card" itemscope itemtype="http://schema.org/BlogPosting">
+  <% if (page.title && page.type !== 'tags' && page.type !== 'categories') { %>
+    <header class="page-header">
+      <h1 class="page-title"><%= page.title %></h1>
+    </header>
+  <% } %>
   <%- partial('_partial/post/gallery') %>
-  <div class="content" itemprop="articleBody">
+  <div class="post-content" itemprop="articleBody">
       <% if (page.search || page.type === "search") { %>
         <%- partial('_partial/search') %>
       <% } else if (page.type === "tags") { %>

@@ -1,0 +1,34 @@
+<% var weeklyPosts = site.pages.filter(function(post) { return post.weekly }).sort('date', 'desc') %>
+<% var currentIssue = page.issue ? '第' + String(page.issue).padStart(2, '0') + '期' : '周刊' %>
+<div class="weekly-post-layout">
+  <aside class="weekly-issue-nav" aria-label="周刊期数">
+    <a class="weekly-back" href="<%- url_for('/weekly/') %>">← 全部周刊</a>
+    <ol>
+      <% weeklyPosts.each(function(post) { %>
+        <% var issueLabel = post.issue ? '第' + String(post.issue).padStart(2, '0') + '期' : '周刊' %>
+        <li class="<%= post.path === page.path ? 'is-current' : '' %>">
+          <a href="<%- url_for(post.path) %>">
+            <span><%= issueLabel %></span>
+            <small><%= post.title %></small>
+          </a>
+        </li>
+      <% }) %>
+    </ol>
+  </aside>
+
+  <article class="weekly-post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="weekly-post-header">
+      <div class="weekly-kicker">LSH WEEKLY · <%= currentIssue %></div>
+      <h1 class="p-name" itemprop="headline"><%= page.title %></h1>
+      <time datetime="<%= date_xml(page.date) %>" class="dt-published" itemprop="datePublished"><%= date(page.date, 'YYYY/MM/DD') %></time>
+    </header>
+    <% if (page.cover) { %>
+      <figure class="weekly-post-cover">
+        <img src="<%- url_for(page.cover) %>" alt="<%= page.title %>">
+      </figure>
+    <% } %>
+    <div class="post-content e-content" itemprop="articleBody">
+      <%- page.content %>
+    </div>
+  </article>
+</div>
