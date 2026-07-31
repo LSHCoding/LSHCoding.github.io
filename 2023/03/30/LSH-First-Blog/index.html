@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="这是LSH的第一篇博客！ 我最喜欢的编程语言：Python 1print(&quot;Hello Python!&quot;) 我在大学阶段的主要学的内容：大气运动方程组 $$ \begin{cases} {\frac {d{\vec {V}}}{dt}}&#x3D;{\vec {g}}-{\frac {1}{\rho }}\nabla p-2{\vec {\Omega }}\land {\vec {V}}">
+    <meta name="description" content="记录从大气科学到机器学习的学习经历，以及对 Python 的偏爱。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LSH&#39;s First Blog!">
 <meta property="og:url" content="https://lshcoding.github.io/2023/03/30/LSH-First-Blog/index.html">
 <meta property="og:site_name" content="LSH">
-<meta property="og:description" content="这是LSH的第一篇博客！ 我最喜欢的编程语言：Python 1print(&quot;Hello Python!&quot;) 我在大学阶段的主要学的内容：大气运动方程组 $$ \begin{cases} {\frac {d{\vec {V}}}{dt}}&#x3D;{\vec {g}}-{\frac {1}{\rho }}\nabla p-2{\vec {\Omega }}\land {\vec {V}}">
+<meta property="og:description" content="记录从大气科学到机器学习的学习经历，以及对 Python 的偏爱。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-30T15:37:36.000Z">
-<meta property="article:modified_time" content="2026-07-13T06:07:51.304Z">
+<meta property="article:modified_time" content="2026-07-31T10:24:19.369Z">
 <meta property="article:author" content="Ling Shuai">
 <meta property="article:tag" content="MySelf">
 <meta name="twitter:card" content="summary">
@@ -68,108 +68,97 @@
 	
 <meta name="generator" content="Hexo 8.1.2"></head>
 
-<body class="max-width mx-auto px3 ltr">
+<body class="ltr">
+    <div class="site-shell ">
+      <header id="header">
+  <div class="site-header-inner">
+    <a class="u-url u-uid site-brand" href="/">
     
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
+      <div id="title">
+        <h1 class="p-name">LSH</h1>
+      </div>
+    </a>
+    <nav id="nav" aria-label="主导航">
       <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     --><!--
-       --><li><a href="/projects/">项目</a></li><!--
-     --><!--
-       --><li><a href="/about/">关于</a></li><!--
-     -->
+        
+          
+        
+          
+            <li><a href="/archives/">归档</a></li>
+          
+        
+          
+            <li><a href="/weekly/">周刊</a></li>
+          
+        
+          
+            <li><a href="/projects/">项目</a></li>
+          
+        
+          
+            <li><a href="/about/">关于</a></li>
+          
+        
       </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="上一篇" href="/2023/03/31/%E5%9C%A8C-%E4%B8%AD%E4%BD%BF%E7%94%A8format/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&text=LSH&#39;s First Blog!"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&is_video=false&description=LSH&#39;s First Blog!"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LSH&#39;s First Blog!&body=Check out this article: https://lshcoding.github.io/2023/03/30/LSH-First-Blog/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&name=LSH&#39;s First Blog!&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&t=LSH&#39;s First Blog!"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
+    </nav>
+  </div>
+</header>
 
+      
+  <section class="site-hero" aria-label="站点简介">
+    <div class="site-hero-inner">
+      <p>AI systems, machine learning, research engineering, and software practice.</p>
     </div>
-    
-    
-  </span>
-</div>
+  </section>
 
-    
-    <div class="content index py4 ">
+
+      <main id="main-content" class="site-main site-main-post">
         
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+<div class="post-layout ">
+  <article class="post post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      
     <h1 class="posttitle p-name" itemprop="name headline">
         LSH&#39;s First Blog!
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">Ling Shuai</span>
-      </span>
-      
+      <div class="meta">
+        <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-name" itemprop="name">Ling Shuai</span>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2023-03-30T15:37:36.000Z" class="dt-published" itemprop="datePublished">2023-03-30</time>
         
-        (Updated: <time datetime="2026-07-13T06:07:51.304Z" class="dt-updated" itemprop="dateModified">2026-07-13</time>)
+        <span aria-hidden="true">·</span>
+        <span>更新于 <time datetime="2026-07-31T10:24:19.369Z" class="dt-updated" itemprop="dateModified">2026-07-31</time></span>
         
       
     </div>
 
 
-      
+        
 
-      
+        
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
         <a class="p-category" href="/tags/MySelf/" rel="tag">MySelf</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content e-content" itemprop="articleBody">
-    <p>这是LSH的第一篇博客！</p>
-<p>我最喜欢的编程语言：Python <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello Python!&quot;</span>)</span><br></pre></td></tr></table></figure></p>
-<p>我在大学阶段的主要学的内容：大气运动方程组 <span
-class="math display">$$
+    <div class="post-content e-content" itemprop="articleBody">
+      <p>这是LSH的第一篇博客！</p>
+<p>我最喜欢的编程语言：Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello Python!&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>我在大学阶段的主要学的内容：大气运动方程组</p>
+<p><span class="math display">$$
 \begin{cases}
 {\frac {d{\vec {V}}}{dt}}={\vec {g}}-{\frac {1}{\rho }}\nabla p-2{\vec
 {\Omega }}\land {\vec {V}}+{\vec {F_{\gamma }}}\\{\frac {\partial \rho
@@ -186,82 +175,41 @@ class="math inline"><em>P</em></span>, if its performance at tasks in
 class="math inline"><em>P</em></span>, improves with experience <span
 class="math inline"><em>E</em></span>）</p>
 
-  </div>
-</article>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-        
-          <li><a href="/">首页</a></li>
-        
-          <li><a href="/archives/">归档</a></li>
-        
-          <li><a href="/projects/">项目</a></li>
-        
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
     </div>
-
-    
-    
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&text=LSH&#39;s First Blog!"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&is_video=false&description=LSH&#39;s First Blog!"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LSH&#39;s First Blog!&body=Check out this article: https://lshcoding.github.io/2023/03/30/LSH-First-Blog/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&title=LSH&#39;s First Blog!"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&name=LSH&#39;s First Blog!&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lshcoding.github.io/2023/03/30/LSH-First-Blog/&t=LSH&#39;s First Blog!"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
+  </article>
+  
 </div>
 
+
+
+      </main>
+      <footer id="footer">
+  <div class="site-footer-inner">
+    
+      <nav class="footer-social" aria-label="社交链接">
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+          
+          <a class="icon" target="_blank" rel="noopener me" href="https://github.com/LSHCoding" aria-label="GitHub" title="GitHub">
+            
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            
+          </a>
+        
+          
+          <a class="icon" target="_blank" rel="noopener me" href="https://www.zhihu.com/people/skylin-66" aria-label="Zhihu" title="Zhihu">
+            
+              <i class="fa-brands fa-zhihu" aria-hidden="true"></i>
+            
+          </a>
+        
+      </nav>
     
-    
-    2023-2026
-    Ling Shuai
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     --><!--
-       --><li><a href="/projects/">项目</a></li><!--
-     --><!--
-       --><li><a href="/about/">关于</a></li><!--
-     -->
-      </ul>
-    </nav>
+    <div class="footer-copy">
+      
+      
+      &copy; 2023–2026
+      Ling Shuai
+    </div>
   </div>
 </footer>
 
